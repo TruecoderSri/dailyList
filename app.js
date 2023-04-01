@@ -6,7 +6,11 @@ const app = express();
 
 var items = ["get-up", "go for a walk", "get breakfast done"];
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+console.log(app.get("view engine"));
+
+// app.set("views", __dirname + "/views");
+app.set("views", "./views");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
