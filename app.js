@@ -1,5 +1,5 @@
 const express = require("express");
-
+const path = require("path");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const app = express();
@@ -9,7 +9,8 @@ app.set("view engine", "ejs");
 console.log(app.get("view engine"));
 
 // app.set("views", __dirname + "/views");
-app.set("views", "./views");
+// app.set("views", "./views");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
